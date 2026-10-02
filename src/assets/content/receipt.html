@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Receipt - CASK EXCHANGE</title>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: Inter, Arial, sans-serif;">
+    <!-- Wrapper Table -->
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+        style="background-color: #ffffff;">
+        <tr>
+            <td align="center" style="padding: 60px 20px;">
+                <!-- Main Container -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                    style="max-width: 800px; background-color: #F4F6F7; border-radius: 10px;">
+                    <tr>
+                        <td style="padding: 32px;">
+                            <!-- Header Section -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding-bottom: 16px;">
+                                        <!-- Logo -->
+                                        <div style="display: inline-block;">
+                                            <span
+                                                style="color: #000000; font-size: 20px; font-weight: 900; text-transform: uppercase; line-height: 30px;">CASK</span>
+                                            <span
+                                                style="color: #F3C446; font-size: 20px; font-weight: 900; text-transform: uppercase; line-height: 30px;">EXCHANGE</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 4px;">
+                                        <div
+                                            style="color: #000000; font-size: 16px; font-weight: 500; line-height: 24px;">
+                                            Cask Exchange, LLC</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 4px;">
+                                        <div
+                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                            520 Broadway</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 4px;">
+                                        <div
+                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                            Suite 200</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 32px;">
+                                        <div
+                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                            Santa Monica, CA 90401</div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Divider -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="border-top: 1px solid #CBD2D6; padding-top: 32px;">
+                                        <!-- BILL TO and RECEIPT Section -->
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0"
+                                            width="100%">
+                                            <tr>
+                                                <!-- BILL TO Column -->
+                                                <td width="50%" valign="top" style="padding-right: 16px;">
+                                                    <div
+                                                        style="color: #22262A; font-size: 24px; font-weight: 600; line-height: 32px; margin-bottom: 12px;">
+                                                        BILL TO</div>
+                                                    <div
+                                                        style="color: #000000; font-size: 16px; font-weight: 500; line-height: 24px; margin-bottom: 4px;">
+                                                        {{customer_name}}</div>
+                                                    <div
+                                                        style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px; margin-bottom: 4px;">
+                                                        {{customer_address_line1}}</div>
+                                                    <div
+                                                        style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px; margin-bottom: 4px;">
+                                                        {{customer_address_line2}}</div>
+                                                    <div
+                                                        style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                                        {{customer_address_line3}}</div>
+                                                </td>
+                                                <!-- RECEIPT Column -->
+                                                <td width="50%" valign="top" style="padding-left: 16px;">
+                                                    <div
+                                                        style="color: #22262A; font-size: 24px; font-weight: 600; line-height: 32px; margin-bottom: 12px;">
+                                                        RECEIPT</div>
+                                                    <div style="margin-bottom: 5px;">
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 500; line-height: 24px;">Date:</span>
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                                            {{invoice_date}}</span>
+                                                    </div>
+                                                    <div style="margin-bottom: 5px;">
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 500; line-height: 24px;">Invoice
+                                                            No.:</span>
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                                            {{invoice_number}}</span>
+                                                    </div>
+                                                    <div>
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 500; line-height: 24px;">Terms:</span>
+                                                        <span
+                                                            style="color: #000000; font-size: 16px; font-weight: 400; line-height: 24px;">
+                                                            On Receipt</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Items Table -->
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                                style="margin-top: 32px; background-color: #ffffff; border: 1px solid #CBD2D6; border-radius: 10px; overflow: hidden;">
+                                <!-- Table Header -->
+                                <tr>
+                                    <td width="8%"
+                                        style="background-color: #E4E7E9; padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 500; line-height: 20px; text-align: left;">
+                                            #</div>
+                                    </td>
+                                    <td width="40%"
+                                        style="background-color: #E4E7E9; padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 500; line-height: 20px;">
+                                            Product</div>
+                                    </td>
+                                    <td width="15%"
+                                        style="background-color: #E4E7E9; padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 500; line-height: 20px; text-align: center;">
+                                            Quantity</div>
+                                    </td>
+                                    <td width="18%"
+                                        style="background-color: #E4E7E9; padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 500; line-height: 20px; text-align: right;">
+                                            Unit Price</div>
+                                    </td>
+                                    <td width="19%"
+                                        style="background-color: #E4E7E9; padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 500; line-height: 20px; text-align: right;">
+                                            Total</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 1 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_1}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_1}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_1}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_1}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_1}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 2 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_2}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_2}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_2}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_2}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_2}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 3 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_3}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_3}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_3}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_3}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_3}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 4 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_4}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_4}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_4}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_4}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_4}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 5 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_5}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_5}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_5}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_5}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_5}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Item Row 6 -->
+                                <tr>
+                                    <td style="padding: 12px; border-bottom: 2px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_number_6}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 2px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px;">
+                                            {{item_name_6}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 2px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: center;">
+                                            {{item_quantity_6}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 2px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_unit_price_6}}</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 2px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                            {{item_total_6}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Summary Row - Subtotal -->
+                                <tr>
+                                    <td colspan="3" style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px;">
+                                            Subtotal</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;"></td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px; text-align: right;">
+                                            {{subtotal}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Summary Row - Processing fee -->
+                                <tr>
+                                    <td colspan="3" style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px;">
+                                            Processing fee (5%)</div>
+                                    </td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;"></td>
+                                    <td style="padding: 12px; border-bottom: 1px solid #CBD2D6;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px; text-align: right;">
+                                            {{processing_fee}}</div>
+                                    </td>
+                                </tr>
+                                <!-- Summary Row - Total -->
+                                <tr>
+                                    <td colspan="3" style="padding: 12px;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px;">
+                                            Total</div>
+                                    </td>
+                                    <td style="padding: 12px;"></td>
+                                    <td style="padding: 12px;">
+                                        <div
+                                            style="color: #3F444B; font-size: 16px; font-weight: 500; line-height: 24px; text-align: right;">
+                                            {{total_amount}}</div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Footer -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%"
+                    style="max-width: 800px; margin-top: 32px;">
+                    <tr>
+                        <td width="50%" style="padding: 0 20px;">
+                            <div style="color: #606E7A; font-size: 14px; font-weight: 400; line-height: 20px;">CASK
+                                EXCHANGE - Invoice #{{invoice_number}}.</div>
+                        </td>
+                        <td width="50%" align="right" style="padding: 0 20px;">
+                            <div
+                                style="color: #606E7A; font-size: 14px; font-weight: 400; line-height: 20px; text-align: right;">
+                                520 Broadway, Suite 200, Santa Monica, CA 90401</div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+.vscode
+.agents 
+.cursor
+/scratch
+# testing
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.cursorignore
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+.mcp.json 
+.mcp.json 
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.shopify 
+
+# env files (can opt-in for committing if needed)
+.env
+.env*.local
+.env.production
+.env.development
+.env.testing
+.env.staging
+
+# vercel
+.vercel
+.codex
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+test
+
+# MCP config containing local tokens
+.mcp.json
+.codex

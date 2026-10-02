@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Refresh generated repo context before validation.
+echo "Generating CODEMAP.md and PATTERNS.md..."
+npm run codemap
+git add CODEMAP.md PATTERNS.md
+
+# Build and validate the tree.
+echo "Building project..."
+npm run build
+
+echo "Running fix-react2shell-next..."
+npx fix-react2shell-next
+
+# Get staged files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|js|jsx|json|css|md)$' | tr '\n' ' ')
+
+if [ -z "$STAGED_FILES" ]; then
+  echo "No staged files to format"
+  exit 0
+fi
+
+# Format staged files with prettier
+echo "Formatting staged files with prettier..."
+npx prettier --write $STAGED_FILES
+
+# Re-stage the formatted files
+git add $STAGED_FILES
+
+# Run lint on staged files
+echo "Running linter..."
+npm run lint
+
+# Type check
+echo "Running type check..."
+npx tsc --noEmit

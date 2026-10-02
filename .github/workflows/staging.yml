@@ -1,0 +1,51 @@
+name: Build and Deploy Frontend to EC2
+
+on:
+    push:
+        branches: [staging]
+
+jobs:
+    build-and-deploy:
+        name: Docker Build, Test, and Deploy
+        runs-on: ubuntu-latest
+        environment: development
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            # Step 1: Build docker image up to "builder" stage
+            - name: Build Docker Image (builder stage)
+              run: |
+                  docker build \
+                    --target builder \
+                    --build-arg NEXT_PUBLIC_APP_NAME=MyAppName \
+                    --build-arg NEXT_PUBLIC_API_URL=https://api.example.com \
+                    --build-arg NEXTAUTH_SECRET=${{ secrets.NEXTAUTH_SECRET }} \
+                    --build-arg NEXTAUTH_URL=https://frontend.example.com/api-fe/auth \
+                    -t caskx-fe-builder .
+
+            # Step 2: Run tests inside the Docker container
+            - name: Run Tests inside builder container
+              run: |
+                  docker run --rm caskx-fe-builder npm run test -- --passWithNoTests
+
+            # Step 3: Deploy to EC2 via SSH
+            - name: Deploy to EC2 via SSH
+              env:
+                  PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+                  HOSTNAME: ${{ secrets.EC2_HOST }}
+                  USER_NAME: ${{ secrets.EC2_USERNAME }}
+              run: |
+                  echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+                  ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+                    echo "🔵 Pulling latest code..."
+                    cd /home/ec2-user/caskx-exchange/caskx-exchange-fe
+                    git checkout staging
+                    git pull origin staging
+
+                    echo "🟢 Rebuilding Docker containers..."
+                    cd /home/ec2-user/caskx-exchange
+                    docker-compose -f docker-compose-frontend.yml down
+                    docker-compose -f docker-compose-frontend.yml up -d --build
+                  '

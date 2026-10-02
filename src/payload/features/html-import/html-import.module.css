@@ -1,0 +1,29 @@
+@layer payload {
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--base) * 0.75);
+        min-width: min(70vw, calc(var(--base) * 30));
+    }
+
+    .description,
+    .hint {
+        margin: 0;
+    }
+
+    .hint {
+        color: var(--theme-elevation-500);
+        font-size: 0.9em;
+    }
+
+    .mode {
+        display: flex;
+        align-items: center;
+        gap: calc(var(--base) * 0.4);
+        cursor: pointer;
+    }
+
+    .mode input {
+        margin: 0;
+    }
+}
