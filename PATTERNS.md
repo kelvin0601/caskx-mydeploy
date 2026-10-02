@@ -1,7 +1,7 @@
 # PATTERNS
 
-Generated: 1 Oct 2026, 19:03
-Commit: 4bdfd599 (dirty)
+Generated: 2 Oct 2026, 11:01
+Commit: 7946e620 (dirty)
 Regenerate: npm run codemap
 
 These patterns are derived from real files in this repo. If a reference path disappears, the section is flagged stale instead of silently drifting.

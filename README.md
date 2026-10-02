@@ -170,3 +170,5 @@ Comprehensive documentation is available in the [`/docs`](./docs) folder:
 - [NextAuth.js Documentation](https://next-auth.js.org/)
 - [TanStack Query Documentation](https://tanstack.com/query/latest)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+<!-- ready to run -->

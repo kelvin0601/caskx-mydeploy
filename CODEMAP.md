@@ -1,7 +1,7 @@
 # CODEMAP
 
-Generated: 1 Oct 2026, 19:03
-Commit: 4bdfd599 (dirty)
+Generated: 2 Oct 2026, 11:01
+Commit: 7946e620 (dirty)
 Regenerate: npm run codemap
 
 This file is generated from the current repo tree. Read it first when you need orientation, then open the source files it points to.
